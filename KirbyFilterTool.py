@@ -1,4 +1,4 @@
-"""Kirby and the Forgotten Land Filter.bin Tool
+"""Kirby and the Forgotten Land Filter Tool
 
    Author: Dhampir
    Version: 1.0
