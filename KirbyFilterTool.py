@@ -55,7 +55,11 @@ def pack_files(input_folder, output_path):
                     packed_file.write(char)
                 if idx != len(files_to_pack) - 1:
                     packed_file.write(padding_calc(32, packed_file.tell()) * b'\x00')
-
+                else:
+                    padding = 4 - (packed_file.tell() % 4)
+                    if padding == 4:
+                        padding = 0
+                    packed_file.write(padding * b'\x00')
         for filename in files_to_pack:
             name = os.path.splitext(filename.split('_')[1])[0]
             name_offset = packed_file.tell()
